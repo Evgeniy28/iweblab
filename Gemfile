@@ -33,7 +33,11 @@ gem 'sdoc', '~> 0.4.0', require: false, group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'rspec-rails', '2.13.1'
+  gem 'rspec-rails', '3.2.0'
+  gem 'guard-rspec', '4.5.0'
+  gem 'spork-rails', '4.0.0'
+  gem 'guard-spork', '2.1.0'
+  gem 'childprocess', '0.5.5'          
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -50,7 +54,8 @@ end
 
 group :test do
 	gem 'selenium-webdriver', '2.35.1'
- 	gem 'capybara', '2.1.0'
+ 	gem 'capybara', '2.4.4'
+  gem 'growl', '1.0.3'
 end
 
 group :production do
