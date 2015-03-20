@@ -1,3 +1,144 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$asbestos: #7f8c8d;
+$wet_asphalt: #34495e;
+$turquois_btn: #1abc9c;
+$azure_signup: #f0ffff;
+
+$context_width: 840px / 1420px * 100%;
+$container_proof_width: 1100px;
+$proof_width: 500px;
+
+.h1home  {
+	font-weight: bold;
+	color: $wet_asphalt;
+}
+
+.btn {
+	padding: 10px 40px;
+	font-size: 1.25em; /* 20px / 16px */
+	font-family: inherit;
+	border-radius: 5px;
+	background-color: $turquois_btn;
+	text-decoration: none;
+	color: white;
+	&:hover {
+		background-color: lighten($turquois_btn, 3%);
+	}
+}
+
+/* First Block */
+
+.content-home {
+	background-color: #f5f7f8;
+	margin-bottom: 60px;
+	padding-bottom: 60px;
+	position: relative;
+
+	.container {
+		.h1home {
+			width: $context_width;
+			padding-top: 60px;
+		}
+		&-phome {
+			width: $context_width;
+			margin-bottom: 40px;
+			font-size: 1.125em; /* 18px / 16px */
+			font-weight: 100;
+			color: $asbestos;
+		}
+		&-mac {
+			position: absolute;
+			top: -60px;
+			right: 13%;
+			z-index: 0;
+		}
+	}
+}
+
+/* Second Block */
+
+.container_proof {
+	position: relative;
+	width: 57%; /* 1100px */
+	margin: 0 auto;
+	.right {
+		float: right;
+	}
+	.rubric {
+	text-align: center;
+	font-size: 1.125em; /* 18px / 16px */
+	font-family: inherit;
+	border-radius: 3px;
+	color: white;
+	&-block1 {
+		width: 150px;
+		background-color: #ff9d00;
+	}
+	&-block2 {
+		width: 200px;
+		margin-right: 300px;
+		background-color: #27AE60;
+	}
+	&-block3 {
+		width: 200px;
+		background-color: #0098dc;
+	}
+}
+	.pt_block2 {
+		padding-top: 75px;
+	}
+	.pt_block3 {
+		padding-top: 95px;
+	}
+	.h1_proof {
+		font-size: 2.5em; /* 40px / 16px */
+	}
+	.h2_proof {
+		line-height: 1.4em;
+		font-size: 1.5em; /* 24px / 16px */
+		font-weight: bold;
+		width: $proof_width;
+		margin-top: 130px;
+		margin-bottom: 20px;
+		color: $wet_asphalt;
+	}
+	.p_proof {
+		width: $proof_width;
+		color: $asbestos;
+		font-size: 1.125em; /* 18px / 16px */
+		font-weight: normal;
+		margin-bottom: 10px;
+	}
+	.img_browser {
+		position: absolute;
+		top: 80px;
+		right: 0;
+	}
+	.img_mac_coding {
+		position: absolute;
+		top: 540px;
+	}
+	.img_deploy {
+		position: absolute;
+		top: 950px;
+		right: 0;
+	}
+}
+
+/* Third Block */
+
+.home-signup {
+	padding-bottom: 100px;
+	margin-top: 117px;
+	position: relative;
+	background-color: darken($azure_signup, 3%);
+	.h1home {
+		padding-top: 60px;
+		font-size: 2em; /* 32px / 16px */
+	}
+	.btn {
+		position: absolute;
+		top: 55%;
+		left: 40%;
+	}
+}
+

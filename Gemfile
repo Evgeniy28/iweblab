@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 #ruby '2.2.0'
 #ruby-gemset=webpractice_rails_4_2_0
 
+gem 'foundation-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -37,7 +38,8 @@ group :development, :test do
   gem 'guard-rspec', '4.5.0'
   gem 'spork-rails', '4.0.0'
   gem 'guard-spork', '2.1.0'
-  gem 'childprocess', '0.5.5'          
+  gem 'childprocess', '0.5.5'
+  gem 'guard-livereload', '2.4.0'
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

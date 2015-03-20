@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	  <title><%= full_title(yield(:title)) %></title>
-	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	  <%= csrf_meta_tags %>
-	</head>
+<html land="ru">
+<head>
+	<meta charset=utf-8>
+	<title><%= full_title(yield(:title)) %></title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
 <body>
+<header class="navbar">
+	<div class="container">
+		<%= link_to "", '#', id: "logo" %>
+		<nav>
+			<ul>
+				<li><%= link_to "Главная", '#' %></li>
+				<li><%= link_to "Курсы",   '#' %></li>
+				<li><%= link_to "Блог",    '#' %></li>
+				<li><%= link_to "Войти",   '#' %></li>
+			</ul>
+		</nav>
+	</div>
+</header>
 
-	<%= yield %>
+<div class="clear"></div>
 
+<%= yield %>
+
+<footer>
+	<p class="copyright container">© 2015 iWebLab , Inc. All rights reserved.</p>
+</footer>
 </body>
 </html>
