@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-#ruby '2.2.0'
-#ruby-gemset=webpractice_rails_4_2_0
+ruby '2.2.0'
 
 gem 'foundation-rails'
 
