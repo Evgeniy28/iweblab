@@ -18,6 +18,15 @@ RSpec.describe "Static pages", :type => :request do
 		it { should have_title('Курсы') }
 	end
 
+	it "should have the right links on the layout" do
+		visit root_path
+
+		click_link "Курсы"
+		expect(page).to have_title('Курсы')
+
+		click_link "Главная"
+		expect(page).to have_title('Лаборатория веб-разработки')
+	end
 end
 
 
