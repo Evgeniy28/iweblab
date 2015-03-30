@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-	get 'static_pages/home'
-	get 'static_pages/courses'
+
+	root 'static_pages#home'
+	get 'courses', to: 'static_pages#courses', as: :courses
 
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".

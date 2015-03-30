@@ -1,20 +1,23 @@
 require 'rails_helper'
 
+RSpec.describe "Static pages", :type => :request do
 
-# describe "Static pages" do
+	subject { page }
 
-# 	describe "Home page" do
+	describe "home page" do
+		before { visit root_path }
 
-# 		it "should have the content 'iWebLab'" do
-# 			visit '/static_pages/home'
-# 			expect(page).to have_content('iWebLab')
-# 		end
-# 	end
-# end
+		it { should have_content('website') }
+		it { should have_title('iWebLab | Лаборатория веб-разработки') }
+	end
 
-RSpec.describe "home page", :type => :request do
-  it "should have the content 'iWebLab'" do
-    visit "/static_pages/home"
-    expect(page).to have_content("iWebLab")
-  end
+	describe "courses page" do
+		before { visit courses_path }
+
+		it { should have_content('Курсы') }
+		it { should have_title('Курсы') }
+	end
+
 end
+
+
