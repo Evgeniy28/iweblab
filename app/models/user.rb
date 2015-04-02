@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	validates :name, presence: true, length: { maximum: 50 }
+	validates :name, presence: true, length: { maximum: 50 } #presence - наличие
 
 	#здесь рег-ое вырю это const, обеспеч. допуст-ть адресов соотв. образцу
 	#остальные будут считаться недопустимыми

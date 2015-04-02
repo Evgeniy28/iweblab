@@ -26,4 +26,4 @@ doc/
 .idea
 .secret
 .rspec
-/spec
+#/spec
