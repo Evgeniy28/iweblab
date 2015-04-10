@@ -8,6 +8,7 @@ RSpec.describe User, type: :model do
 
 	it { should respond_to(:name) } #respond_to принимает символ и возвращает true, если объект отвечает на данный метод, иначе false(проверяет в объекте наличие такой переменной)
 	it { should respond_to(:email) }
+	it { should respond_to(:password_digest) }
 
 	it { should be_valid } #проверка что объект @user изначально валиден
 
