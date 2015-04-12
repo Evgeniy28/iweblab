@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-	before do @user = User.new(name: "Evgeniy Azarov",
-														email: "azarov91@mail.ru",
-														password: "1235qewa",
-														password_confirmation: "1235qewa")
+	before do 
+		@user = User.new(name: 'Evgeniy Azarov',
+										email: 'azarov91@mail.ru',
+										password: '1235qewa',
+										password_confirmation: '1235qewa')
 	end
 
 	subject { @user }
@@ -14,6 +15,7 @@ RSpec.describe User, type: :model do
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
+	it { should respond_to(:authenticate) }
 
 	it { should be_valid } #проверка что объект @user изначально валиден
 
@@ -73,10 +75,10 @@ RSpec.describe User, type: :model do
 	end
 
 	describe "when password is not present" do
-		before do @user = User.new(name: "Evgeniy Azarov",
-															email: "azarov91@mail.ru",
-															password: "",
-															password_confirmation: "")
+		before do @user = User.new(name: 'Evgeniy Azarov',
+															email: 'azarov91@mail.ru',
+															password: '',
+															password_confirmation: '')
 		end
 		it { should_not be_valid }
 	end
@@ -84,6 +86,27 @@ RSpec.describe User, type: :model do
 	describe "when password doesn't match confirmation" do
 		before { @user.password_confirmation = "mismatch" }
 		it { should_not be_valid }
+	end
+
+	describe "with a password that's too short" do #тестируем на длину пароля, установив длину не меньше 6 знаков
+		before { @user.password = @user.password_confirmation = "a" * 5 }
+		it { should be_invalid }
+	end
+
+	describe "return value of authenticate method" do
+		before { @user.save } 
+		let(:found_user) { User.find_by(email: @user.email) } #let создает локальную переменную внутри теста
+
+		describe "with valid password" do
+			it { should eq found_user.authenticate(@user.password) } #'равенство' eq служит для проверки эквивалентности объектов
+		end
+
+		describe "with invalid password" do
+			let(:user_for_invalid_password) { found_user.authenticate('invalid') }
+
+			it { should_not eq user_for_invalid_password }
+			specify { expect(user_for_invalid_password).to be_falsey } #метод specify синоним для it, используется когда it звучит ненатурально
+		end
 	end
 
 end
