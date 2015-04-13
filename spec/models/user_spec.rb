@@ -74,7 +74,7 @@ RSpec.describe User, type: :model do
 		it { should_not be_valid }
 	end
 
-	describe "email address with mixed case" do
+	describe "email address with mixed case" do #проверяем, что сохраненный email в нижнем регистре
 		let(:mixed_case_email) { 'AzaROv91@MaIl.Ru' }
 
 		it "should be saved as all lower-case" do

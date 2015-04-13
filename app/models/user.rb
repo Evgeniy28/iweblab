@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	before_save { self.email = email.downcase } #флбтернативная реализация email.downcase!
+	before_save { self.email = email.downcase } #альтернативная реализация email.downcase!
 	validates :name, presence: true, length: { maximum: 50 } #presence - наличие
 
 	#здесь рег-ое вырю это const, обеспеч. допуст-ть адресов соотв. образцу

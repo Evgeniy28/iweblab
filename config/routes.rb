@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-	get 'users/new'
+	resources :users
 
 	root 'static_pages#home'
 	get 'courses', to: 'static_pages#courses', as: :courses

@@ -151,4 +151,15 @@ footer {
 	}
 }
 
+/* Temp */
+
+.debug_dump {
+	width: 90%;
+	margin: 30px auto 0;
+	padding: 20px;
+	background: #ecf0f1;
+	border-radius: 5px;
+	@include box-sizing;
+}
+
 
