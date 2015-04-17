@@ -18,7 +18,9 @@ $proof_width: 500px;
 	background-color: $turquois_btn;
 	text-decoration: none;
 	color: white;
+	border: none;
 	&:hover {
+		cursor: pointer;
 		background-color: lighten($turquois_btn, 3%);
 	}
 }

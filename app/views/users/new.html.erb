@@ -1,19 +1,23 @@
 <% provide(:title, 'Регистрация') %>
 
-<%= form_for(@user) do |f| %>
-	<%= render 'shared/error_messages' %>
+	<div class="container-signup">
+		<div class="container-form">
+			<%= form_for(@user) do |f| %>
+				<%= render 'shared/error_messages' %>
 
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+				<%= f.label :name, "Логин" %>
+				<%= f.text_field :name %>
 
-	<%= f.label :email %>
-	<%= f.text_field :email %>
+				<%= f.label :email %>
+				<%= f.text_field :email, placeholder: "example@mail.com" %>
 
-	<%= f.label :password %>
-	<%= f.password_field :password %>
+				<%= f.label :password, "Пароль" %>
+				<%= f.password_field :password %>
 
-	<%= f.label :password_confirmation, "Confirmation" %>
-	<%= f.password_field :password_confirmation %>
+				<%= f.label :password_confirmation, "Подтвердите пароль" %>
+				<%= f.password_field :password_confirmation %>
 
-	<%= f.submit "Зарегистрироваться", class: "btn" %>
-<% end %>
+				<%= f.submit "Зарегистрироваться", class: "btn" %>
+			<% end %>
+		</div>
+	</div>
