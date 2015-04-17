@@ -15,7 +15,7 @@ RSpec.describe "UserPages", type: :request do
 	describe "GET users/new, signup_path" do
 		before { visit signup_path }
 
-		it { should have_content('Confirmation') }
+		it { should have_content('Email') }
 		it { should have_title('Регистрация') }
 	end
 
@@ -38,10 +38,10 @@ RSpec.describe "UserPages", type: :request do
 
 		describe "with valid information" do
 			before do
-				fill_in "Name",         with: "Evgeniy28"
+				fill_in "Логин",         with: "Evgeniy28"
 				fill_in "Email",        with: "azarov91@mail.ru"
-				fill_in "Password",     with: "foobar"
-				fill_in "Confirmation", with: "foobar"
+				fill_in "Пароль",     with: "foobar"
+				fill_in "Подтвердите пароль", with: "foobar"
 			end
 
 			it "should create a user" do
