@@ -8,21 +8,6 @@ $font: 'open_sanslight', Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
 
-input .btn {
-	padding: 10px 40px;
-	font-size: 1.25em; /* 20px / 16px */
-	font-family: inherit;
-	border-radius: 5px;
-	background-color: $turquois_btn;
-	text-decoration: none;
-	color: white;
-	border: none;
-	&:hover {
-		cursor: pointer;
-		background-color: lighten($turquois_btn, 3%);
-	}
-}
-
 .container-signup {
 	background-color: lighten($turquois_btn, 30%);
 	position: relative;
@@ -39,8 +24,19 @@ input .btn {
 			border-radius: 5px;
 			@include box-sizing;
 			.btn {
-					border: none!important;
+				padding: 10px 40px;
+				font-size: 1.25em; /* 20px / 16px */
+				font-family: inherit;
+				border-radius: 5px;
+				background-color: $turquois_btn;
+				text-decoration: none;
+				color: white;
+				border: none!important;
+				&:hover {
+					cursor: pointer;
+					background-color: lighten($turquois_btn, 3%);
 				}
+			}
 			input {
 				display: block;
 				width: 100%;
