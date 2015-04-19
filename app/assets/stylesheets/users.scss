@@ -24,6 +24,8 @@ $font: 'open_sanslight', Helvetica, Arial, sans-serif;
 			border-radius: 5px;
 			@include box-sizing;
 			input[type="submit"] {
+				display: inline-block;
+				width: 100%;
 				padding: 10px 40px;
 				font-size: 1.25em; /* 20px / 16px */
 				font-family: inherit;
@@ -32,12 +34,13 @@ $font: 'open_sanslight', Helvetica, Arial, sans-serif;
 				text-decoration: none;
 				color: white;
 				border: none!important;
+				outline: none!important;
 				&:hover {
 					cursor: pointer;
 					background-color: lighten($turquois_btn, 3%);
 				}
 			}
-			input {
+			input[type="text"], input[type="password"] {
 				display: block;
 				width: 100%;
 				margin: 5px auto 15px;
