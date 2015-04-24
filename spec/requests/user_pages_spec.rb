@@ -52,6 +52,7 @@ RSpec.describe "UserPages", type: :request do
 				before { click_button submit }
 				let(:user) { User.find_by(name: 'Evgeniy28') }
 
+				it { should have_link('Выйти') }
 				it { should have_title(user.name) }
 				it { should have_selector('div.alert.alert-success', text: 'Добро') }
 			end

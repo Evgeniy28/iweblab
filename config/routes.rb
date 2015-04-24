@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 	resources :sessions, only: [:new, :create, :delete]
 	get 'signin',     to: 'sessions#new',    as: :signin
-	delete 'signout', to: 'sessions#delete', as: :signout
+	delete 'signout', to: 'sessions#destroy', as: :signout
 
 	root 'static_pages#home'
 	get 'courses', to: 'static_pages#courses', as: :courses
