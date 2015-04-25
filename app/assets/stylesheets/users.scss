@@ -26,6 +26,7 @@ $font: 'open_sanslight', Helvetica, Arial, sans-serif;
 			button {
 				display: inline-block;
 				width: 100%;
+				margin-top: 15px;
 				padding: 10px 40px;
 				font-size: 1.25em; /* 20px / 16px */
 				font-family: inherit;
@@ -51,6 +52,19 @@ $font: 'open_sanslight', Helvetica, Arial, sans-serif;
 				outline: none!important;
 				@include box-sizing;
 			}
+		}
+	}
+}
+
+.signup-dialog {
+	margin-top: 25px;
+	text-align: center;
+	a {
+		text-decoration: none;
+		color: #136fd2;
+		&:hover, &:active, &:focus {
+			color: #0f56a3;
+			cursor: pointer;
 		}
 	}
 }

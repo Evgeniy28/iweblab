@@ -10,6 +10,6 @@ div class="container-signup"
 			= f.password_field :password
 
 			= f.button "Войти"
-			p
-				| У Вас нет аккаунта? 
-				= link_to "Зарегистрироваться!", signup_path
+			p class="signup-dialog"
+				| У Вас еще нет аккаунта? 
+				= link_to "Зарегистрироваться.", signup_path
