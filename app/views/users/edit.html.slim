@@ -1,0 +1,22 @@
+- provide(:title, "Редактирование пользователя")
+
+h1 Персональные настройки
+
+div class="container-signup"
+	div class="container-form"
+		= form_for(@user) do |f|
+			= render 'shared/error_messages'
+
+			= f.label :name, "Логин"
+			= f.text_field :name
+
+			= f.label :email
+			= f.text_field :email, placeholder: "example@mail.com"
+
+			= f.label :password, "Пароль"
+			= f.password_field :password
+
+			= f.label :password_confirmation, "Подтвердите пароль"
+			= f.password_field :password_confirmation
+
+			= f.button "Сохранить изменения"

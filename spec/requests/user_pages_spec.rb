@@ -59,4 +59,44 @@ RSpec.describe "UserPages", type: :request do
 		end
 	end
 
+	describe "edit" do
+		let(:user) { FactoryGirl.create(:user) }
+		before do
+			visit signin_path
+			fill_in "Email", with: user.email.upcase
+			fill_in "Пароль", with: user.password
+			click_button "Войти"
+			visit edit_user_path(user)
+		end
+
+		describe "page" do
+			it { should have_content("Персональные настройки") }
+			it { should have_title("Редактирование пользователя") }
+		end
+
+		describe "with invalid information" do
+			before { click_button "Сохранить изменения" }
+
+			it { should have_content('error') }
+		end
+
+		describe "with valid information" do
+			let(:new_name) { "New Name" }
+			let(:new_email) { "new@example.com" }
+			before do
+				fill_in "Логин", with: new_name
+				fill_in "Email", with: new_email
+				fill_in "Пароль", with: user.password
+				fill_in "Подтвердите пароль", with: user.password
+				click_button "Сохранить изменения"
+			end
+
+			it { should have_title(new_name) }
+			it { should have_selector('div.alert.alert-success') }
+			it { should have_link('Выйти', href: signout_path) }
+			specify { expect(user.reload.name).to eq new_name }
+			specify { expect(user.reload.email).to eq new_email }
+		end
+	end
+
 end
